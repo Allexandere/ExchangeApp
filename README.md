@@ -1,3 +1,6 @@
+Приложение использует API центробанка
+https://www.cbr.ru/development/
+
 **Запуск:**<br />
 
   Запуск осуществляется при помощи docker-compose:<br />
