@@ -6,39 +6,293 @@
     <title> Exchange app </title>
 </head>
 <style>
-    table, th, td {
-        border: 1px solid black;
-        align-content: center;
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+    .styled-table {
+        width: 100%;
+        position: absolute;
+        top: 30%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .styled-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+    }
+
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr {
+        background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr {
+        border-bottom: 2px solid #009879;
+    }
+
+    .styled-table tbody tr {
+        font-weight: bold;
+        color: #009879;
+    }
+
+    .btn {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        padding: 4px 10px 4px;
+        margin-bottom: 0;
+        font-size: 13px;
+        line-height: 18px;
+        color: #333333;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+        vertical-align: middle;
+        background-color: #f5f5f5;
+        background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+        background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: linear-gradient(top, #ffffff, #e6e6e6);
+        background-repeat: repeat-x;
+        filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0);
+        border-color: #e6e6e6 #e6e6e6 #e6e6e6;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        border: 1px solid #e6e6e6;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        *margin-left: .3em;
+    }
+
+    .btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
+        background-color: #e6e6e6;
+    }
+
+    .btn-large {
+        padding: 9px 14px;
+        font-size: 15px;
+        line-height: normal;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        color: #333333;
+        text-decoration: none;
+        background-color: #e6e6e6;
+        background-position: 0 -15px;
+        -webkit-transition: background-position 0.1s linear;
+        -moz-transition: background-position 0.1s linear;
+        -ms-transition: background-position 0.1s linear;
+        -o-transition: background-position 0.1s linear;
+        transition: background-position 0.1s linear;
+    }
+
+    .btn-primary, .btn-primary:hover {
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+    }
+
+    .btn-primary.active {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .btn-primary {
+        background-color: #4a77d4;
+        background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4);
+        background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4));
+        background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4);
+        background-image: -o-linear-gradient(top, #6eb6de, #4a77d4);
+        background-image: linear-gradient(top, #6eb6de, #4a77d4);
+        background-repeat: repeat-x;
+        filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);
+        border: 1px solid #3762bc;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+        filter: none;
+        background-color: #4a77d4;
+    }
+
+    .btn-block {
+        width: 100%;
+        display: block;
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        background: #092756;
+        background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -moz-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -webkit-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -o-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -o-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -ms-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -ms-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+        background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #670d10 0%, #092756 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3E1D6D', endColorstr='#092756', GradientType=1);
+    }
+
+    .login {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        margin: -150px 0 0 -150px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .login h1 {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 13px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+        -webkit-transition: box-shadow .5s ease;
+        -moz-transition: box-shadow .5s ease;
+        -o-transition: box-shadow .5s ease;
+        -ms-transition: box-shadow .5s ease;
+        transition: box-shadow .5s ease;
+    }
+
+    input:focus {
+        box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .login svg {
+        position: absolute;
+        right: 12px;
+        top: calc(50% - 3px);
+        width: 10px;
+        height: 6px;
+        stroke-width: 2px;
+        stroke: #9098a9;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        pointer-events: none;
+    }
+
+    .login select {
+        -webkit-appearance: none;
+        padding: 7px 40px 7px 12px;
+        width: 100%;
+        border: 1px solid #e8eaed;
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0 1px 3px -2px #9098a9;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+        transition: all 150ms ease;
+    }
+
+    .login select:required:invalid {
+        color: #5a667f;
+    }
+
+    .login select option {
+        color: #223254;
+    }
+
+    .login select option[value=""][disabled] {
+        display: none;
+    }
+
+    .login select:focus {
+        outline: none;
+        border-color: #07f;
+        box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+    }
+
+    .login select:hover + svg {
+        stroke: #07f;
+    }
+
+    .login sprites {
+        position: absolute;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        user-select: none;
     }
 </style>
 <body>
-<h1 align="center">Exchange</h1>
-<div align="center">
+<div align="center" class="login">
+    <h1 align="center">Exchange</h1>
     <form method="post" th:action="@{/exchange}" th:object="${exchangeRequest}">
         <select th:field="*{SourceValute}">
-            <div th:each="code : ${codes}">
+            <span th:each="code : ${codes}">
                 <option th:text="${code}" th:value="${code}">th:text="${code}"</option>
-            </div>
+            </span>
         </select>
         <select th:field="*{TargetValute}">
-            <div th:each="code : ${codes}">
+            <span th:each="code : ${codes}">
                 <option th:text="${code}" th:value="${code}">th:text="${code}"</option>
-            </div>
+            </span>
         </select>
-        <br>
         <span>
-            <input type="number" step="0.01" min="0.01" th:field="*{SourceAmount}">
+            <input type="number" step="0.01" min="0.01" placeholder="1" th:field="*{SourceAmount}">
         </span>
         <span>
             <input type="number" th:field="*{TargetAmount}" readonly>
         </span>
         <div>
-            <button type="submit"> Конвертировать</button>
+            <button type="submit" class="btn btn-primary btn-block btn-large"> Конвертировать</button>
         </div>
     </form>
 </div>
 <div>
-    <table style="width:100%">
+    <table class="styled-table">
         <thead>
         <th>Исходная валюта</th>
         <th>Целевая валюта</th>
@@ -47,15 +301,15 @@
         <th>Дата</th>
         </thead>
         <tbody>
-        <tr th:if="${history.empty}">
+        <tr th:if="${history.empty}" class="active-row">
             <td colspan="5"> История пуста</td>
         </tr>
-        <tr th:each="el : ${history}">
-            <td><span th:text="${el.SourceValute}"> Title </span></td>
-            <td><span th:text="${el.TargetValute}"> Author </span></td>
-            <td><span th:text=" ${el.SourceAmount}"> Title </span></td>
-            <td><span th:text="${el.TargetAmount}"> Author </span></td>
-            <td><span th:text=" ${el.Date}"> Date </span></td>
+        <tr th:each="el : ${history}" class="active-row" >
+            <td><span th:text="${el.SourceValute}"></span></td>
+            <td><span th:text="${el.TargetValute}"></span></td>
+            <td><span th:text=" ${el.SourceAmount}"></span></td>
+            <td><span th:text="${el.TargetAmount}"></span></td>
+            <td><span th:text=" ${el.Date}"></span></td>
         </tr>
         </tbody>
 </div>
