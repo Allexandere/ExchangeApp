@@ -1,5 +1,5 @@
 FROM openjdk:8-alpine
 WORKDIR /workdir
-COPY target/*.jar app.jar
+COPY src/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
