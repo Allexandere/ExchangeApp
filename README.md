@@ -9,6 +9,8 @@
   Страничка аутетнтификации <br />
   Логин - user <br />
   Пароль - 1 <br />
+  ![alt text](https://github.com/Allexandere/ExchangeApp/blob/master/login.jpg?raw=true)
   
   `/exchange`<br />
   Страничка с основной логикой приложения
+  ![alt text](https://github.com/Allexandere/ExchangeApp/blob/master/exchange.jpg?raw=true)
