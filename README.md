@@ -4,8 +4,11 @@ https://www.cbr.ru/development/
 **Запуск:**<br />
 
   Запуск осуществляется при помощи docker-compose:<br />
-  `docker-compose up`
-  
+  ```
+  git clone https://github.com/Allexandere/ExchangeApp.git
+  cd ExchangeApp/
+  docker-compose up
+  ```
  **Эндпоинты:**<br />
  
   `/login`<br />
